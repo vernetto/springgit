@@ -1,5 +1,6 @@
 .mvn
-mvnm*
+mvnw
+mvnw.cmd
 
 HELP.md
 target/
