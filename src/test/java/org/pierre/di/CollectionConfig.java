@@ -3,6 +3,7 @@ package org.pierre.di;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
 
 import java.util.*;
 
@@ -39,5 +40,28 @@ public class CollectionConfig {
         nameMap.put(2, "Adam");
         nameMap.put(3, "Harry");
         return nameMap;
+    }
+
+    @Bean
+    @Order(2)
+    public BaeldungBean getElement() {
+        return new BaeldungBean("John");
+    }
+
+    @Bean
+    @Order(1)
+    public BaeldungBean getAnotherElement() {
+        return new BaeldungBean("Adam");
+    }
+
+    @Bean
+    @Order(3)
+    public BaeldungBean getOneMoreElement() {
+        return new BaeldungBean("Harry");
+    }
+
+    @Bean
+    public CollectionsBaeldungBean getCollectionsBaeldungBean() {
+        return new CollectionsBaeldungBean();
     }
 }
