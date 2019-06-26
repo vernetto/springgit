@@ -7,12 +7,20 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
-public class CollectionListTest {
+public class CollectionTest {
     @Test
     public void testList() {
         ApplicationContext context = new AnnotationConfigApplicationContext(CollectionConfig.class);
-        CollectionsBeanList collectionsBean = context.getBean(
-                CollectionsBeanList.class);
+        CollectionsBeanList collectionsBean = context.getBean(CollectionsBeanList.class);
         collectionsBean.printNameList();
     }
+
+    @Test
+    public void testSet() {
+        ApplicationContext context = new AnnotationConfigApplicationContext(CollectionConfig.class);
+        CollectionsBeanSet collectionsBean = context.getBean(CollectionsBeanSet.class);
+        collectionsBean.printNameSet();
+    }
+
+
 }
