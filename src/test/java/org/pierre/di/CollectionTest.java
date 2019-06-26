@@ -22,5 +22,11 @@ public class CollectionTest {
         collectionsBean.printNameSet();
     }
 
+    @Test
+    public void testMap() {
+        ApplicationContext context = new AnnotationConfigApplicationContext(CollectionConfig.class);
+        CollectionsBeanMap collectionsBean = context.getBean(CollectionsBeanMap.class);
+        collectionsBean.printNameMap();
+    }
 
 }
